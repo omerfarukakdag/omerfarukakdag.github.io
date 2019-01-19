@@ -36,8 +36,34 @@
 		  {% endif %}
 		  
 		  {% if include.type == "post" %}
-		  <span class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</span>
-		  {% endif %}
+      <p class="post-meta">
+        <span class="post-date">
+          <strong>{{ site.uiResource[page.lang].date }}:</strong>
+          {% assign m = page.date | date: "%-m" %}
+          {{ page.date | date: "%-d" }}
+          {% case m %}
+            {% when '1' %}{{ site.dateResource[page.lang].January }}
+            {% when '2' %}{{ site.dateResource[page.lang].February }}
+            {% when '3' %}{{ site.dateResource[page.lang].March }}
+            {% when '4' %}{{ site.dateResource[page.lang].April }}
+            {% when '5' %}{{ site.dateResource[page.lang].May }}
+            {% when '6' %}{{ site.dateResource[page.lang].June }}
+            {% when '7' %}{{ site.dateResource[page.lang].July }}
+            {% when '8' %}{{ site.dateResource[page.lang].August }}
+            {% when '9' %}{{ site.dateResource[page.lang].September }}
+            {% when '10' %}{{ site.dateResource[page.lang].October }}
+            {% when '11' %}{{ site.dateResource[page.lang].November }}
+            {% when '12' %}{{ site.dateResource[page.lang].December }}
+          {% endcase %}
+          {{ page.date | date: "%Y" }}
+        </span>
+        {% if page.layout == "post" and page.level %}
+        <span class="post-level">
+          <strong>{{ site.uiResource[page.lang].level }}:</strong> {{ page.level }}
+        </span>
+        {% endif %}
+      </p>
+      {% endif %}
         </div>
       </div>
     </div>
@@ -61,7 +87,33 @@
 		  {% endif %}
 		  
 		  {% if include.type == "post" %}
-		  <span class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</span>
+      <p class="post-meta">
+        <span class="post-date">
+          <strong>{{ site.uiResource[page.lang].date }}:</strong>
+          {% assign m = page.date | date: "%-m" %}
+          {{ page.date | date: "%-d" }}
+          {% case m %}
+            {% when '1' %}{{ site.dateResource[page.lang].January }}
+            {% when '2' %}{{ site.dateResource[page.lang].February }}
+            {% when '3' %}{{ site.dateResource[page.lang].March }}
+            {% when '4' %}{{ site.dateResource[page.lang].April }}
+            {% when '5' %}{{ site.dateResource[page.lang].May }}
+            {% when '6' %}{{ site.dateResource[page.lang].June }}
+            {% when '7' %}{{ site.dateResource[page.lang].July }}
+            {% when '8' %}{{ site.dateResource[page.lang].August }}
+            {% when '9' %}{{ site.dateResource[page.lang].September }}
+            {% when '10' %}{{ site.dateResource[page.lang].October }}
+            {% when '11' %}{{ site.dateResource[page.lang].November }}
+            {% when '12' %}{{ site.dateResource[page.lang].December }}
+          {% endcase %}
+          {{ page.date | date: "%Y" }}
+        </span>
+        {% if page.layout == "post" and page.level %}
+        <span class="post-level">
+          <strong>{{ site.uiResource[page.lang].level }}:</strong> {{page.level }}
+        </span>
+        {% endif %}
+      </p>
 		  {% endif %}
         </div>
       </div>

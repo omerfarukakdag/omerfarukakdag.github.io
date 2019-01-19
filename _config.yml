@@ -17,18 +17,13 @@ baseurl: ""
 title: Omer Faruk AKDAG
 
 # Short description of your site
-description:
+description: Blog
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Hakkımda: "aboutme"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -45,7 +40,7 @@ avatar: "/img/avatar-icon.png"
 navbar-col: "#F5F5F5"
 navbar-text-col: "#404040"
 navbar-children-col: "#F5F5F5"
-page-col: "#FFFFFF"
+page-col: "#F8F8F8"
 link-col: "#008AFF"
 hover-col: "#0085A1"
 footer-col: "#F5F5F5"
@@ -64,7 +59,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Ömer Faruk AKDAĞ
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -72,21 +67,21 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "someone@example.com"
-  facebook: daattali
-  github: daattali
-  twitter: daattali
+  github: omerfarukakdag
+  linkedin: omerfarukakdag 
+  instagram: omerfarukakdag
+#  facebook: omerfarukakdag
+#  email: "someone@example.com"
+#  twitter: 
 #  reddit: yourname
-#  google-plus: +DeanAttali
-#  linkedin: daattali
+#  google-plus: 
 #  xing: yourname
-#  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-#  youtube: user/deanat78
+#  stackoverflow: ""
+#  snapchat: 
+#  youtube: user/
 #  spotify: yourname
-#  telephone: +14159998888
-#  steam: deanat78
+#  telephone: 
+#  steam:
 #  twitch: yourname
 #  yelp: yourname
 
@@ -99,7 +94,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "www.omerfarukakdag.me"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -131,7 +126,7 @@ url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Staticman support
 staticman:
-  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
+  repository :  "omerfarukakdag/omerfarukakdag.github.io"
   branch     : # eg. "master" If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
   endpoint   : # URL of your own deployment (with trailing slash) (will fallback to a public GitLab instance)
   reCaptcha:
@@ -248,9 +243,53 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-sitemap
 
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
+#Resources
+uiResource:
+  en:
+    next: "NEXT"
+    previous: "PREVIOUS"
+    level: "Level"
+    date: "Date"
+    blog_post: "Blog Posts"
+  tr:
+    next: "SONRAKİ"
+    previous: "ÖNCEKİ"
+    level: "Seviye"
+    date: "Tarih"
+    blog_post: "Blog Yazıları"
+
+dateResource:
+  en:
+    January: "Jan"
+    February: "Feb"
+    March: "Mar"
+    April: "Apr"
+    May: "May"
+    June: "Jun"
+    July: "Jul"
+    August: "Aug"
+    September: "Sep"
+    October: "Oct"
+    November: "Nov"
+    December: "Dec"
+  tr:
+    January: "Oca"
+    February: "Şub"
+    March: "Mar"
+    April: "Nis"
+    May: "May"
+    June: "Haz"
+    July: "Tem"
+    August: "Ağu"
+    September: "Eyl"
+    October: "Eki"
+    November: "Kas"
+    December: "Ara"
+
+
+    #Additional Configurations
+    showNavBarHeader: false
