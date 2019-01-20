@@ -5,6 +5,7 @@ lang: tr
 blog: true
 comments: false
 social-share: false
+progress: "continues"
 ---
 
 React komponentlerinde hata yönetimi
