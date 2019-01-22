@@ -9,7 +9,7 @@ social-share: false
 
 Error Boundaries, React 16 ile birlikte sunulan, içerdiği komponentlerde meydana gelen JavaScript hatalarını yakalamak ve onları render etmek (html çıktısını üretmek) yerine bir hata şablonu (fallback UI) göstermek için kullanılan bir React komponentidir.
 
-Error Boundaries sadece render süresince ve lifecycle metodları içerisinde meydana gelen hataları yakalar.
+Error Boundaries sadece render süresince ve lifecycle metodları içerisinde meydana gelen hataları yakalamaktadır.
 
 Error Boundaries komponenti aşağıdaki durumlarda meydana gelen hataları **yakalamamaktadır**:
 * Event handlers (render sürecini etkilemedikleri için)
