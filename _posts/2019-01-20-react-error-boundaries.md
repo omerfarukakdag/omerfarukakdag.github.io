@@ -68,7 +68,7 @@ foreach(var num in collection)
 }
 ``` 
 
-**Tanımlı (Bildirimli) Programlama:** Emirli programlamanın aksine kontrol akışını belirtmeden çıktıya odaklanan programlama paradigmasıdır.
+**Tanımlı (Bildirimli) Programlama (Declarative Programming):** Emirli programlamanın aksine kontrol akışını belirtmeden çıktıya odaklanan programlama paradigmasıdır.
 
 * İşlemin nasıl olduğuyla değil ne olduğuyla ilgilenir.
 * Programın amaçladığı şey belirtilir (çıktı ne olmalı?).
