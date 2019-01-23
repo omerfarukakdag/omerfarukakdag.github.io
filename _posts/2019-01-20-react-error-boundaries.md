@@ -7,7 +7,7 @@ comments: false
 social-share: false
 ---
 
-Error Boundaries, React 16 ile birlikte sunulan, içerdiği komponentlerde meydana gelen JavaScript hatalarını yakalamak ve onları render etmek (html çıktısını üretmek) yerine bir hata şablonu (fallback UI) göstermek için kullanılan bir React komponentidir.
+Error Boundaries, React 16 ile birlikte sunulan, içerdiği komponentlerde meydana gelen JavaScript hatalarını yakalamak ve bu durumda alt komponentler yerine istenen şablonun (örneğin hata sayfası veya fallback UI) render (html çıktısını üretmek) edilmesini sağlamak için kullanılan bir React komponentidir.
 
 Error Boundaries sadece render süresince ve lifecycle metodları içerisinde meydana gelen hataları yakalamaktadır.
 
@@ -43,6 +43,47 @@ Bir komponentin Error Boundary özelliği taşıyabilmesi için  [**static getDe
   </App>
 </ErrorBoundary>
 ```
+
+### Neden try/catch bloğu kullanmıyoruz?
+
+**Emirli Programlama (Imperative Programming):** Bilgisayar bilimlerinde, programlama dillerini sınıflandırmak ve bir programlama dilinin özelliklerini belirtmek için kullanılan bir terimdir.Bir programlama dilindeki komutların satır satır emirlerden oluşmasıdır.
+* Programın hangi işlemleri yapacağı açıkça belirtilir.
+* Nasıl sorusuna cevap verir.
+> Derleyiciye ne yapmak istediğimizi adım adım kodlayarak anlatmamız bu paradigmaya örnek olarak verilebilir.
+ 
+ - results isminde bir liste oluştur.
+ - collection listesinde gezerek tüm elemanları kontrol et.
+ - eğer eleman çift sayı ise results listesine ekle.
+
+```
+ var collection = new List<int> { 1, 2, 3, 4, 5 };
+```
+
+```
+var results = new List<int>();
+foreach(var num in collection)
+{
+    if (num % 2 != 0)
+          results.Add(num);
+}
+``` 
+
+**Tanımlı (Bildirimli) Programlama:** Emirli programlamanın aksine kontrol akışını belirtmeden çıktıya odaklanan programlama paradigmasıdır.
+
+* İşlemin nasıl olduğuyla değil ne olduğuyla ilgilenir.
+* Programın amaçladığı şey belirtilir (çıktı ne olmalı?).
+
+ > *İnternet üzerinden bir ürün siparişi verdik mesela.Bu siparişin firmaya ulaştıktan sonra hangi aşamalardan geçtiği (ürün temini, üretim aşaması, bize ulaştırılana kadar hangi ulaşım yolunu kullandığı vb.) gibi kısımlarla ilgilenmiyoruz.Bizim amacımız o ürüne sahip olmak.*
+
+ > Sayfamıza bir ```<Button />``` komponenti ekledik mesela.Burada amacımız ekranda bir button/input elementinin gösterilmesi.Komponentin html çıktısı üretilene kadar geçirdiği evreler bizim ilgilendiğimiz kısım değil.
+ 
+***
+
+**try/catch bloğu sadece emirli programlama konseptiyle çalışmaktadır.**
+
+**React komponentleri ise tanımlı (bildirimli) programlama konseptine dayalıdır.Error Boundary komponentiyle de bu konseptin korunması amaçlanmıştır.**
+
+***
 
 TypeScript ile yazılan örnek Error Boundary komponenti aşağıda verilmiştir.
 
