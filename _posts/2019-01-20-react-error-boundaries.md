@@ -63,7 +63,7 @@ Bir komponentin Error Boundary özelliği taşıyabilmesi için  [**static getDe
 var results = new List<int>();
 foreach(var num in collection)
 {
-    if (num % 2 != 0)
+    if (num % 2 == 0)
           results.Add(num);
 }
 ``` 
