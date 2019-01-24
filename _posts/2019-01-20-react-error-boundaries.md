@@ -7,15 +7,22 @@ comments: false
 social-share: false
 ---
 
-Error Boundaries, React 16 ile birlikte sunulan, içerdiği komponentlerde meydana gelen JavaScript hatalarını yakalamak ve bu durumda alt komponentler yerine istenen şablonun (örneğin hata sayfası veya fallback UI) render (html çıktısını üretmek) edilmesini sağlamak için kullanılan bir React komponentidir.
+Error Boundary (Hata Sınırı), React 16 ile birlikte sunulan, içerdiği komponentlerde meydana gelen JavaScript hatalarını yakalamak ve bu durumda alt komponentler yerine istenen şablonun (örneğin hata sayfası veya fallback UI) render (html çıktısını üretmek) edilmesini sağlamak için kullanılan bir React komponentidir.
 
-Error Boundaries sadece render süresince ve lifecycle metodları içerisinde meydana gelen hataları yakalamaktadır.
+* Komponentler için JavaScript catch {} bloğu gibi çalışır.
+* Bir komponentin Error Boundary özelliği taşıyabilmesi için [Class Component](https://reactjs.org/docs/components-and-props.html) şeklinde tanımlanması gerekir.
 
-Error Boundaries komponenti aşağıdaki durumlarda meydana gelen hataları **yakalamamaktadır**:
-* Event handlers (render sürecini etkilemedikleri için)
-* Asenkron kodlar (örneğin setTimeout)
+Error Boundary sadece içerdiği komponentlerin render ve lifecycle metodları içerisinde meydana gelen hataları yakalamaktadır.Eğer Error Boundary komponentinin kendinde hata meydana gelirse hatayı, üzerinde (parent) bulunan en yakın Error Boundary komponentine iletir.
+
+Error Boundary komponenti aşağıdaki durumlarda meydana gelen hataları **yakalamamaktadır**:
+* Event handlers (Olay Yöneticileri: onClick,onChange,onBlur vb.)
+  * (Render ve lifecycle metodlarının aksine komponentin render sürecinde yer almazlar.Dolayısıyla burada hata fırlatılsa bile render işlemi devam eder.)
+  * Burada fırlatılan hataları yakalamak isterseniz try/catch bloğu kullanabilirsiniz.
+* Asenkron kodlar (örneğin setTimeout, [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) callback fonksiyonu vb.)
 * Server side rendering
 * Error Boundary komponentinin kendi hataları
+
+> Error Boundary komponenti tarafından yakalanmayan bir hata meydana gelirse React komponent ağacının tümü html çıktısından kaldırılır (unmount işlemi).
 
 Bir komponentin Error Boundary özelliği taşıyabilmesi için  [**static getDerivedStateFromError()**](https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror) veya [**componentDidCatch()**](https://reactjs.org/docs/react-component.html#componentdidcatch) metod tanımlarını içermesi gerekir.
 
@@ -41,6 +48,26 @@ Bir komponentin Error Boundary özelliği taşıyabilmesi için  [**static getDe
   <App>
    <Container />
   </App>
+</ErrorBoundary>
+```
+
+* Error Boundary komponentinin içerdiği komponentlerin herhangi birinde hata meydana gelmesi diğer komponentlerin de render **edilmemesine** sebep olmaktadır.
+
+```
+<ErrorBoundary>
+  <ComponentErrorFirst />
+  <ComponentErrorSecond />
+ </ErrorBoundary>
+```
+
+* Her Error Boundary komponenti kendi içerdiği komponentlerin hatalarından sorumludur.Aşağıdaki örnekteki gibi ComponentErrorFirst komponentinde meydana gelen hata ComponentErrorSecond komponentinin render edilmesini **etkilemeyecektir**.
+
+```
+<ErrorBoundary>
+  <ComponentErrorFirst />
+</ErrorBoundary>
+<ErrorBoundary>
+  <ComponentErrorSecond />
 </ErrorBoundary>
 ```
 
