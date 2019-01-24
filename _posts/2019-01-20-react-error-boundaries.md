@@ -18,7 +18,7 @@ Error Boundary komponenti aşağıdaki durumlarda meydana gelen hataları **yaka
 * Event handlers (Olay Yöneticileri: onClick,onChange,onBlur vb.)
   * (Render ve lifecycle metodlarının aksine komponentin render sürecinde yer almazlar.Dolayısıyla burada hata fırlatılsa bile render işlemi devam eder.)
   * Burada fırlatılan hataları yakalamak isterseniz try/catch bloğu kullanabilirsiniz.
-* Asenkron kodlar (örneğin setTimeout, [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) callback fonksiyonu vb.)
+* Asenkron kodlar (örneğin [setTimeout](https://developer.mozilla.org/ro/docs/Web/API/window.setTimeout), [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) callback fonksiyonu vb.)
 * Server side rendering
 * Error Boundary komponentinin kendi hataları
 
