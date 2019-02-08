@@ -260,8 +260,8 @@ const ComponentWithError = () => {
 };
 
 const ComponentWithRuntimeError = () => {
-  let componentNames: string[] = undefined;
-  let filteredList = componentNames.map(name => {
+  let componentNames: string[] | undefined = undefined;
+  let filteredList = componentNames.filter((name: string) => {
     return name.startsWith("purecomponent");
   });
   console.log(filteredList.join("-"));
