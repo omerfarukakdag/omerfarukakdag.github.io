@@ -127,7 +127,6 @@ interface ErrorDetail {
 }
 interface ErrorBoundaryProps {
     ErrorViewComponent?: ComponentType<any>,
-    children?: any,
     isDevelopmentEnvironment?: boolean,
     onError?: (errorDetail: ErrorDetail) => void
 }
@@ -210,7 +209,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
         const { errorDetail } = this.state;
         const { ErrorViewComponent } = this.props;
 
-        if (errorDetail === null)
+        if (!errorDetail)
             return;
 
         return (
